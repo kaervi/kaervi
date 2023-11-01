@@ -1,0 +1,32 @@
+def calculate_macros_calories(ingredients):
+    total_calories = 0
+    total_protein = 0
+    total_carbs = 0
+    total_fat = 0
+
+    for ingredient in ingredients:
+        calories = ingredient['calories']
+        protein = ingredient['protein']
+        carbs = ingredient['carbs']
+        fat = ingredient['fat']
+
+        total_calories += calories
+        total_protein += protein
+        total_carbs += carbs
+        total_fat += fat
+
+    return total_calories, total_protein, total_carbs, total_fat
+
+ingredients = [
+    {'name': 'Chicken Breast', 'calories': 165, 'protein': 31, 'carbs': 0, 'fat': 3.6},
+    {'name': 'Brown Rice', 'calories': 216, 'protein': 5, 'carbs': 45, 'fat': 2},
+    {'name': 'Broccoli', 'calories': 55, 'protein': 3.7, 'carbs': 11.2, 'fat': 0.6},
+    {'name': 'Olive Oil', 'calories': 119, 'protein': 0, 'carbs': 0, 'fat': 13.5}
+]
+
+total_calories, total_protein, total_carbs, total_fat = calculate_macros_calories(ingredients)
+
+print(f"Total Calories: {total_calories}")
+print(f"Total Protein: {total_protein}g")
+print(f"Total Carbs: {total_carbs}g")
+print(f"Total Fat: {total_fat}g")
